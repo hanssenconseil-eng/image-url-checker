@@ -35,9 +35,6 @@ if uploaded_file:
     df = pd.read_csv(uploaded_file)
     df = df[["ProductCode", "DisplayUrl"]].copy()
 
-    st.write("Aperçu des données")
-    st.dataframe(df)
-
     if st.button("Lancer analyse"):
         ref_img = load_image(REFERENCE_URL)
         ref_hash = get_hash(ref_img)
